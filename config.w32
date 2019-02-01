@@ -1,0 +1,7 @@
+ARG_ENABLE('avahi', 'avahi support', 'no');
+
+if (PHP_AVAHI != 'no') {
+	AC_DEFINE('HAVE_AVAHI', 1, 'avahi support enabled');
+
+	EXTENSION('avahi', 'avahi.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
